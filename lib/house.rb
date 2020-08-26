@@ -28,4 +28,12 @@ class House
     end
     same_type_room
   end
+
+  def area
+    house_area = []
+    @rooms. each do |room|
+      house_area << room.area
+    end
+    house_area.sum
+  end
 end
