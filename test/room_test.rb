@@ -19,8 +19,20 @@ class RoomTest < Minitest::Test
     # skip
     room1 = Room.new(:bedroom, 10, '13')
     room2 = Room.new(:living_room, 15, '12')
-# binding.pry
     assert_equal 130, room1.area
     assert_equal 180, room2.area
+  end
+
+  def test_is_painted?
+    room1 = Room.new(:bedroom, 10, '13')
+    assert_equal false, room1.is_painted?
+  end
+
+  def test_paint
+    room1 = Room.new(:bedroom, 10, '13')
+
+    room1.paint
+
+    assert_equal true, room1.is_painted?
   end
 end
